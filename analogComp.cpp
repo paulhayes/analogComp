@@ -214,6 +214,12 @@ void analogComp::enableInterrupt(void (*tempUserFunction)(void), uint8_t tempMod
     _interruptEnabled = 1;
 }
 
+// Vout = 1 when Vin0 > Vin1
+// Vout = 0 when Vin0 < Vin1
+bool analogComp::readComparator(){
+    return ACSR & (1<<ACO);
+}
+
 
 //disable the interrupt on comparations
 void analogComp::disableInterrupt(void) {

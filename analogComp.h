@@ -86,6 +86,7 @@ class analogComp {
 		//analogComp();
         uint8_t setOn(uint8_t = AIN0, uint8_t = AIN1);
         void setOff(void);
+        bool readComparator();
         void enableInterrupt(void (*)(void), uint8_t tempMode = CHANGE);
         void disableInterrupt(void);
         uint8_t waitComp(unsigned long = 0);
